@@ -27,4 +27,5 @@ public class CodingConventions {
 		
 		System.out.println(name + description);
 	}
+	
 }
