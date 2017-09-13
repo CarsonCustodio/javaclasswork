@@ -24,10 +24,6 @@ public class IntroMain {
 			 * instance method call (the method belongs to the instance, not the class)
 			 */
 			conventionsInstance.doStuff();
-		}
-		
-		
+		}		
 	}
-	//test
-	
 }
