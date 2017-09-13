@@ -12,7 +12,6 @@ public class CodingConventions {
 	 * for this reason, a constructor must always be named after the class
 	 */
 	public CodingConventions(int nameIndex, int descriptionIndex) {
-		//instantiate variables now:
 		
 		//there are 2 variables called "name" the local variable and the field
 		//distinguish between the 2 by using the word "this" (field)
@@ -23,8 +22,7 @@ public class CodingConventions {
 	
 	//normal method "void"
 	public void doStuff() {
-		//static method call:
-		
+		//static method call:	
 		System.out.println(name + description);
 	}
 	
