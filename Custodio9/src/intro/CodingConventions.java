@@ -25,5 +25,6 @@ public class CodingConventions {
 		//static method call:	
 		System.out.println(name + description);
 	}
+	//test
 	
 }
