@@ -2,7 +2,7 @@ package attendance;
 
 import java.util.Scanner;
 
-public class AttendanceApp {
+public class AttendanceApp implements Student{
 
 
 	private Attendee[] students;
