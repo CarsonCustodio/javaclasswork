@@ -6,6 +6,10 @@ public class Student implements Attendee{
 	private String lastName;
 	private boolean present;
 	
+	public Student(String first, String last) {
+	
+	}
+
 	public boolean isPresent() {
 		return present;
 	}
@@ -38,5 +42,11 @@ public class Student implements Attendee{
 			report += firstName;
 		}
 		return report;
+	}
+
+	@Override
+	public boolean mathces(String first, String last) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
