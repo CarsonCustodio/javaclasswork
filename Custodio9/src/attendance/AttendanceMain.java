@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class AttendanceMain {
 
 	//constants
-	public static final String[] names ={"Nabeel Amin","Fahadullah Asif","Mimi Buan","Garrett Chen","Daniel Dong","Daniel Dong","Jane Feng","Jenny Fu","Remington Fu","Benjamin Gloger","Victor Hom","Lubna Khalid","Samuel Khong","Sunny Kwong","David Li","Steven Li","Zhehao Lin","Zhehao Lin","Ricky Pong","Sisiame Sakasamo","Erik Villavera","Jessi Wu","David Yashayev","Justin Yau","Coby Yee","Andrew Zhou","Tristan Chau","Theophilus Davis","Daniel Eisen","David Hung","Alice Karetsky","Joanna Lao","Jessica Li","Kevin Liu","Daniel Maseyev","Ethan Tam","David Tan","Devin Yang","Ji Ye","Raymond Zhao","Vincent Zheng","Weixiong Zhu","Jason Zou"};
+	public static final String[] names ={"Nabeel Amin","Fahadullah Asif","Mimi Buan", "Carson Custodio","Garrett Chen","Daniel Dong","Daniel Dong","Jane Feng","Jenny Fu","Remington Fu","Benjamin Gloger","Victor Hom","Lubna Khalid","Samuel Khong","Sunny Kwong","David Li","Steven Li","Zhehao Lin","Zhehao Lin","Ricky Pong","Sisiame Sakasamo","Erik Villavera","Jessi Wu","David Yashayev","Justin Yau","Coby Yee","Andrew Zhou","Tristan Chau","Theophilus Davis","Daniel Eisen","David Hung","Alice Karetsky","Joanna Lao","Jessica Li","Kevin Liu","Daniel Maseyev","Ethan Tam","David Tan","Devin Yang","Ji Ye","Raymond Zhao","Vincent Zheng","Weixiong Zhu","Jason Zou"};
 	public static final Scanner inputSource = new Scanner(System.in);
 
 	
