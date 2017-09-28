@@ -1,6 +1,6 @@
 package attendance;
 
-public class Student{
+public class Student implements Attendee{
 	
 	private String firstName;
 	private String lastName;
