@@ -43,10 +43,10 @@ public class Student implements Attendee {
 
 	public String getReportString() {
 		while(firstName.length()<20) {
-			firstName+= " ";
+			firstName += " ";
 		}
 		while(lastName.length()<20) {
-			firstName+= " ";
+			lastName += " ";
 		}
 		return firstName + lastName + ispresent;
 	}
