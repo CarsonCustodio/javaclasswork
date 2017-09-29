@@ -24,7 +24,7 @@ public interface Attendee {
 	boolean mathces(String first, String last);
 
 	
-	//returns true if 'first' matches this Attendee's firstName. This should NOT be case sensitive.
+	//returns true if 'last' matches this Attendee's lastName. This should NOT be case sensitive.
 	boolean matches(String last);
 
 	//returns three words separated by 20 spaces: 
@@ -36,4 +36,6 @@ public interface Attendee {
 	//cut off the last three letters and replace with "..."
 	String getReportString();
 
+
+	
 }

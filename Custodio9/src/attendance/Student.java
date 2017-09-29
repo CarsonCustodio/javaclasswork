@@ -1,50 +1,51 @@
 package attendance;
 
-public class Student implements Attendee{
+public class Student implements Attendee {
+	String firstName;
+	String lastName;
+	private boolean ispresent = false;
+	public Student(String first,String last){
+		firstName = first;
+		lastName = last;
+	}
 	
-	private String firstName;
-	private String lastName;
-	private boolean present;
-	
-	public Student(String first, String last) {
-	
+	public boolean isPresent() {
+		return ispresent;
 	}
 
-	public boolean isPresent() {
-		return present;
-	}
-	
 	public void setPresent(boolean present) {
-		this.present = present;
+		ispresent = present;	
 	}
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
-	
+
 	public String getLastName() {
 		return lastName;
 	}
-	
-	public boolean matches(String first, String last) {
-		return first.toLowerCase().equals(firstName.toLowerCase()) && last.toLowerCase().equals(lastName.toLowerCase());
-	}
-	
-	public boolean matches(String last) {
-		return last.toLowerCase().equals(lastName.toLowerCase());
-	}
-	
-	public String getReportString() {
-		String report = lastName;
-		if (report.length() > 20) {
-			report = lastName.substring(0,17) + "...";
-		}else {
-			report += firstName;
-		}
-		return report;
-	}
 
 	public boolean mathces(String first, String last) {
+		if(first.toLowerCase().equals(firstName) && last.toLowerCase().equals(lastName) ) {
+			return true;
+		}
 		return false;
+	}
+
+	public boolean matches(String last) {
+		if(last.toLowerCase().equals(lastName)) {
+			return true;
+		}
+		return false;
+	}
+
+	public String getReportString() {
+		while(firstName.length()<20) {
+			firstName+= " ";
+		}
+		while(lastName.length()<20) {
+			firstName+= " ";
+		}
+		return firstName + lastName + ispresent;
 	}
 }

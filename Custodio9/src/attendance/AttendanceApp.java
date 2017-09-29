@@ -1,8 +1,7 @@
 package attendance;
 
-import java.util.Scanner;
+public class AttendanceApp {
 
-public class AttendanceApp{
 
 	private Attendee[] students;
 
@@ -37,8 +36,11 @@ public class AttendanceApp{
 		AttendanceMain.print("(Press enter)");
 		AttendanceMain.getInput();
 		run();
+		
 	}
 	
+
+
 	public String searchForStudent(String last){
 		while(notFound(last)){
 			AttendanceMain.print("Sorry. That name was not found. Please try again. Enter the LAST name only.");
@@ -86,7 +88,7 @@ public class AttendanceApp{
 				}
 			}
 		}
-		//student is not found, return null
+		//student is not  found, return null
 		return null;
 	}
 
@@ -127,6 +129,9 @@ public class AttendanceApp{
 		}
 		return true;
 	}
+
+
+
 
 	public void createStudentRecords(){
 		//create an Attendee for every name in the record
