@@ -2,41 +2,33 @@ package attendance;
 
 public class AttendanceApp {
 
-
 	private Attendee[] students;
 
-
-
 	public AttendanceApp(){
-
 		createStudentRecords();
 	}
 
 	public void run(){
 		AttendanceMain.print("Welcome to BTHS Attendance 1.0! To sign in, just type your last name. To view all attendance records, type \"Attendance\".");
 
-
 		String last = AttendanceMain.getInput();
 
 		while(!last.toLowerCase().equals("attendance")){
 			last = searchForStudent(last);
 		}
-		attendanceReport();
-		
+		attendanceReport();	
 	}
 	
 	public void attendanceReport(){
 		AttendanceMain.print("Here are the present students today:");
 		String s = "";
 		for(int i = 0; i < students.length; i++){
-
 			s+=students[i].getReportString();
 		}
 		System.out.println(s);
 		AttendanceMain.print("(Press enter)");
 		AttendanceMain.getInput();
 		run();
-		
 	}
 	
 
@@ -71,7 +63,6 @@ public class AttendanceApp {
 		
 		AttendanceMain.print("Welcome to BTHS Attendance 1.0! To sign in, just type your last name. To view all attendance records, type \"Attendance\".");
 		return AttendanceMain.getInput();
-		
 	}
 	
 	public Attendee getStudentWithName(String first, String last) {
