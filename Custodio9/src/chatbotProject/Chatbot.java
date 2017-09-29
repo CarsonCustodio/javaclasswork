@@ -20,7 +20,7 @@ public class Chatbot {
 			String response = ChatbotMain.getInput();
 			if(carson.isTriggered(response)) {
 				chatting = false;
-				carson.startChatting();
+				carson.startChatting(response);
 			}else {
 				ChatbotMain.print("Im sorry I don't understand.");
 			}
