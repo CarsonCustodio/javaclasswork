@@ -75,7 +75,6 @@ public class AttendanceApp {
 					if(first.toLowerCase().equals(students[i].getFirstName().toLowerCase())){
 						return students[i];
 					}
-
 				}
 			}
 		}
@@ -120,9 +119,6 @@ public class AttendanceApp {
 		}
 		return true;
 	}
-
-
-
 
 	public void createStudentRecords(){
 		//create an Attendee for every name in the record

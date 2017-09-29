@@ -1,9 +1,11 @@
 package attendance;
 
 public class Student implements Attendee {
+	
 	String firstName;
 	String lastName;
 	private boolean ispresent = false;
+	
 	public Student(String first,String last){
 		firstName = first;
 		lastName = last;
