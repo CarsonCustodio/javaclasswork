@@ -9,12 +9,85 @@ public class ArraysMain {
 
 	public ArraysMain() {
 		intRay = new int[100];
-		//populate(intRay);
-		//checkOccurences(intRay, 3, 18);
 		populate1ToN(intRay);
 		shuffle(intRay);
+		longestConsecSeq(intRay);
 		//Arrays is a Utility class included in Java for formatting output
 		System.out.println(Arrays.toString(intRay));
+		
+		int[] randomRolls = new int[1000];
+		populate(randomRolls);
+		
+		int[] result = longestConsecSeqPos(randomRolls);
+		System.out.println("The longest sequence of dice rolls is " + result[0]);
+		System.out.println("It happened on the " + (result[1] + 1) + "th roll. Starting with a rool of " + randomRolls);
+	}
+	
+	public int[] longestConsecSeqPos(int[] arr) {
+		
+	}
+	
+	public boolean nextElementIsInSequence(int[] arr, int pos) {
+		return true;
+	}
+		
+	public int longestConsecSeq(int[] arr) {
+		int count = 1;
+		int newCount = 0;
+		for(int i = 1; i < arr.length; i++) {
+			if(arr[i] == arr[i-1] + 1) {
+				count++;
+				if(count > newCount) {
+					newCount = count;
+					count = 0;
+				}
+			}
+		}
+		
+		if(count < 2) {
+			count = 0;
+		}
+		System.out.println("The longest sequence is " + newCount);
+		return newCount;
+	}
+
+	public void cycleThrough(int[] arr, int n) {
+		for(int i = 0; i < n; i++) {
+			frontBack(arr);
+		}
+	}
+	
+	/*Remove the element at index area, push every other element up by one.
+	 * Put the element that was at zero at the end of arr.
+	 */
+	private void frontBack(int[] arr) {
+		int firstValue = arr[0];
+		for(int i = 0; i < arr.length - 1; i++) {
+			arr[i] = arr[i+1];
+		}
+		arr[arr.length - 1] = firstValue;
+	}
+	
+	private int countLessThan(int[] arr, int n) {
+		int count = 0;
+		for(int value: arr) {
+			if(value < n)count++;
+		}
+		return count;
+	}
+	
+	private int[] reverseOrder(int[] arr) {
+		int[] newArr = new int [arr.length];
+		for(int i = 0; i < arr.length; i++) {
+			newArr[i] = arr[arr.length - 1 - i];
+		}
+		return newArr;
+	}
+	
+	private void reverseOrder2(int[] arr) {
+		for(int i = 0; i < arr.length/2; i++) {
+			swap(arr, i, arr.length - 1 -i);
+		}
 	}
 	
 	private void shuffle(int[] arr) {
