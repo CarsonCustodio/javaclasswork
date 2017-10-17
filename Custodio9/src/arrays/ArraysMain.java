@@ -8,13 +8,14 @@ public class ArraysMain {
 	private int[] intRay;
 
 	public ArraysMain() {
-		intRay = new int[100];
+		/*intRay = new int[100];
 		populate1ToN(intRay);
 		shuffle(intRay);
 		longestConsecSeq(intRay);
+		
 		//Arrays is a Utility class included in Java for formatting output
 		System.out.println(Arrays.toString(intRay));
-		
+		*/
 		int[] randomRolls = new int[1000];
 		populate(randomRolls);
 		
@@ -24,7 +25,9 @@ public class ArraysMain {
 	}
 	
 	public int[] longestConsecSeqPos(int[] arr) {
-		
+		int pos = 0;
+		longestConsecSeq(arr);
+		return arr;
 	}
 	
 	public boolean nextElementIsInSequence(int[] arr, int pos) {
