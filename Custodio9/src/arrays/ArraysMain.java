@@ -39,16 +39,16 @@ public class ArraysMain {
 		int newCount = 0;
 		for(int i = 1; i < arr.length; i++) {
 			if(arr[i] == arr[i-1] + 1) {
-				count++;
+				if(count == 0) {
+					count += 2;
+				}else {
+					count++;
+				}
 				if(count > newCount) {
 					newCount = count;
 					count = 0;
 				}
 			}
-		}
-		
-		if(count < 2) {
-			count = 0;
 		}
 		System.out.println("The longest sequence is " + newCount);
 		return newCount;
