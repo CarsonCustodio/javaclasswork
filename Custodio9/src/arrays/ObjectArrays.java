@@ -3,11 +3,12 @@ package arrays;
 public class ObjectArrays {
 	
 	public ObjectArrays() {
-		Object[]  people = new Object[20];
+		Person[]  people = new Person[12];
 		populate(people);
-		people[0] = new Thing("coffee maker");
-		for(Object p: people) {
-			System.out.println(p);
+		for(Person p: people) {
+			p.mingle(people);
+			p.printFriends();
+			System.out.println("");
 		}
 	}
 	
@@ -37,5 +38,48 @@ public class ObjectArrays {
 
 	private String get(String[] a) {
 		return a[(int)(Math.random() * a.length)];
+	}
+	
+	public Person[] selectGroup(Person[] population, int length) {
+		Person[] subGroup = new Person[length];
+		subGroup[0] = selectAPerson(population);
+		for(int i = 1; i <subGroup.length; i++) {
+			Person nextPerson = selectAPerson(population);
+			while(personInGroup(subGroup, nextPerson)) {
+				
+			}
+			subGroup[i] = nextPerson;
+		}
+		return subGroup;
+	}
+	
+	
+	//returns the # of differences between the 2 arrays
+	//A difference means that they don't have the same element at the same position
+	public double countDifferences(Person[] arr1, Person[] arr2) {
+		int count = 0;
+		for(int i = 0; i < arr1.length; i++) {
+			if(arr1[i] == arr2[i]) {
+				count ++;
+			}
+		}
+		return count;
+	}
+	
+	public int testShuffling() {
+		int total = 0;
+		for(int i = 0; i < 100; i++) {
+			total += countDifferences(p1, p2);
+		}
+		return total / 100;
+	}
+
+	public static boolean personInGroup(Person[] subGroup, Person nextPerson) {
+		return false;
+	}
+
+	private Person selectAPerson(Person[] population) {
+		int rand = (int)(Math.random() * population.length); 
+		return population[rand];
 	}
 }
