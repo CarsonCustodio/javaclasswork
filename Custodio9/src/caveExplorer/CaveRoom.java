@@ -15,8 +15,7 @@ public class CaveRoom {
 	public static final int EAST = 1;
 	public static final int SOUTH =2;
 	public static final int WEST = 3;
-	
-	
+		
 	public CaveRoom(String description) {
 		this.description = description;
 		setDefaultContents(" ");
@@ -29,7 +28,6 @@ public class CaveRoom {
 		doors = new Door[4];
 		setDirections();
 	}
-
 
 	/**
 	 * for every door in doors[] appends a String to "directions" describing the access.
@@ -75,7 +73,6 @@ public class CaveRoom {
 		contents = defaultContents;
 	}
 
-
 	public String getDescription() {
 		return description;
 	}
@@ -93,34 +90,64 @@ public class CaveRoom {
 	}
 
 	public static int oppositeDirection(int direction) {
-		return 0;
+		int[] arr = {2, 3, 0 , 1};
+		return arr[direction];
 	}
 
+	public void addRoom(int direction, CaveRoom cave, Door door) {
+		borderingRooms[direction] = cave;
+		doors[direction] = door;
+		setDirections();
+	}
+	
+	public void interpretInput(String input) {
+		while(isValid(input)) {
+			System.out.println("You can only enter w, a s or d");
+			input = CaveExplorer.in.nextLine();
+		}
+		//task: convert user input into a direction
+		//Don't use more than 1 if statement
+		String directions = "wdsa";
+		goToRoom(directions.indexOf(input));
+	}
 
-	public void addRoom(int direction, CaveRoom anotherRoom, Door door) {
+	private boolean isValid(String input) {
+		String validEntries = "wdsa";
+		return validEntries.indexOf(input) > - 1 && input.length() == 1;
+	}
+
+	private void goToRoom(int direction) {
+		//first, protect against nullPointerException
+		//user cannot go through non-existent door
+		if(borderingRooms[direction] != null && doors[direction] != null) {
+			CaveExplorer.currentRoom.leave();
+			CaveExplorer.currentRoom = borderingRooms[direction];
+			CaveExplorer.currentRoom.enter();
+			CaveExplorer.inventory.updateMap();
+		}
+	}
+	
+	/**
+	 * This is will be where your group sets up all the caves
+	 * and all the connections
+	 */
+	public static void setUpCaves() {
 		
 	}
-
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public String getContents() {
 		return contents;
 	}
-
 
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
 
-
 	public void setDefaultContents(String defaultContents) {
 		this.defaultContents = defaultContents;
 	}
-	
-	
-
 }
