@@ -9,10 +9,7 @@ public class CaveExplorer {
 	public static CaveRoom currentRoom;//changes based on how the user navigated
 	public static Inventory inventory;//where all objects found in cave are kept
 	
-	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
-
 }
