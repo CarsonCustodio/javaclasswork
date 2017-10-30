@@ -30,7 +30,7 @@ public class CaveExplorer {
 	
 	public static void print(String s) {
 		String printString = "";
-		int cutoff = 55;
+		int cutoff = 190;
 		while(s.length() > 0){
 			String currentCut = "";
 			String nextWord = "";

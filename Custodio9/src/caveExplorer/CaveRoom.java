@@ -24,8 +24,8 @@ public class CaveRoom {
 		//inside this room, when you leave, it goes back to defaultContents
 		
 		//note: by default, arrays will populate with 'null' meaning there are no connections
-		borderingRooms = new CaveRoom[4];
-		doors = new Door[4];
+		borderingRooms = new CaveRoom[6];
+		doors = new Door[6];
 		setDirections();
 	}
 
@@ -168,5 +168,9 @@ public class CaveRoom {
 
 	public void setDefaultContents(String defaultContents) {
 		this.defaultContents = defaultContents;
+	}
+
+	public Door getDoor(int direction) {
+		return doors[direction];
 	}
 }
