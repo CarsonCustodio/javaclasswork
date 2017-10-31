@@ -2,8 +2,6 @@ package caveExplorer;
 
 public class TwoDArrayPractice {
 	
-	
-
 	public static void main(String[] args) {
 		String[][] pic = new String[6][10];
 		for(int row = 0; row < pic.length; row++) {

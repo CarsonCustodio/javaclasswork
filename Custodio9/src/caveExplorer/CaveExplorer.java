@@ -20,7 +20,7 @@ public class CaveExplorer {
 
 	private static void startExploring() {
 		while(playing) {
-			print(inventory.getDescription());
+			System.out.println(inventory.getDescription());
 			print(currentRoom.getDescription());
 			print("What would you like to do?");
 			String input = in.nextLine();
