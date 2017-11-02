@@ -9,6 +9,7 @@ public class CaveExplorer {
 	public static CaveRoom currentRoom;//changes based on how the user navigated
 	public static Inventory inventory;//where all objects found in cave are kept
 	public static boolean playing = true;
+	public static NPC[] npcs;
 	
 	public static void main(String[] args) {
 		in = new Scanner(System.in);
@@ -20,7 +21,8 @@ public class CaveExplorer {
 
 	private static void startExploring() {
 		while(playing) {
-			System.out.println(inventory.getDescription());
+			npcActions();
+			print(inventory.getDescription());
 			print(currentRoom.getDescription());
 			print("What would you like to do?");
 			String input = in.nextLine();
@@ -28,23 +30,15 @@ public class CaveExplorer {
 		}
 	}
 	
-	public static void print(String s) {
-		String printString = "";
-		int cutoff = 190;
-		while(s.length() > 0){
-			String currentCut = "";
-			String nextWord = "";
-			while(currentCut.length()+nextWord.length() < cutoff && s.length() > 0){
-				currentCut += nextWord;
-				s = s.substring(nextWord.length());
-				int endOfWord = s.indexOf(" ");
-				if(endOfWord == -1) {
-					endOfWord = s.length()-1;//subtract 1 because index of last letter is one les than length
-				}
-				nextWord = s.substring(0,endOfWord+1);
-			}
-			printString +=currentCut+"\n";
+	private static void npcActions() {
+		for(NPC n: npcs) {
+			n.act();
 		}
-		System.out.print(printString);
+		inventory.updateMap();
+	}
+
+	public static void print(String s) {
+		//NOTE: later, you can replace this line with the more sophisticated "multiLinePrint" from Chatbot
+		System.out.println(s);
 	}
 }
