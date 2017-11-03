@@ -175,6 +175,10 @@ public class CaveRoom {
 		CaveExplorer.npcs[0] = new NPC();
 		CaveExplorer.npcs[0].setposition(1, 1);
 		
+		//Add each person's room like this:
+		CaveRoom customRoom = new NPCRoom("Room");
+		CaveExplorer.caves[4][3] = customRoom;
+		
 		//4. Set your starting room:
 		CaveExplorer.currentRoom = CaveExplorer.caves[0][1];
 		CaveExplorer.currentRoom.enter();
@@ -188,7 +192,6 @@ public class CaveRoom {
 		 * can another object move toward you?
 		 */
 	}
-
 
 	public String getDescription() {
 		return description + "\n"+directions;
