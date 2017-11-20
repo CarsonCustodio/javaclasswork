@@ -23,7 +23,7 @@ public class Habitat extends Environment {
 		return super.toString() + "\nHabitats:\n" + animalReport();
 	}
 
-	private String animalReport() {
+	public String animalReport() {
 		String s = "";
 		for(Animal a: animals) {
 			s += a + "\n";
