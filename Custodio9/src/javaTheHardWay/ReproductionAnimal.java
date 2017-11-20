@@ -14,7 +14,7 @@ public class ReproductionAnimal extends RoamingAnimal{
 			youngAnimal = animal1.getOffspring(animal2);
 		}
 		System.out.println(animal1 + " and a\n" + animal2);
-		System.out.println("had a baby and it was a\n " + youngAnimal);
+		System.out.println("had a baby and it was a\n" + youngAnimal);
 	}
 	
 	public ReproductionAnimal(Habitat matingArea) {
