@@ -1,5 +1,5 @@
 package javaTheHardWay;
 
-public class Prey {
+public class Prey extends Animal{
 
 }
