@@ -13,6 +13,10 @@ public class Predator extends ReproductionAnimal {
 	}
 	
 	public static final String[] PREDATORS = {"wolf", "bear", "lion", "bobcat"};
+	
+	public String getName() {
+		return PREDATORS[(int)(Math.random() * PREDATORS.length)];
+	}
 			
 	public static void main(String[] args) {
 		Wilderness wilderness = new Wilderness("A wooded area", 10);
