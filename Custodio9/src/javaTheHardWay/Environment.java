@@ -6,13 +6,13 @@ public class Environment {
 	private int growthRate;
 
 	public static void main(String[] args) {
-		Environment farm = new Environment(10);
+		Environment farm = new Environment(40);
 		System.out.println(farm);
 		farm.growPlants();
 	}
 	
 	void growPlants() {
-		plants += growthRate;
+		plants += growthRate + plants/2;
 		System.out.println("There are " + plants + " plants");
 	}
 
