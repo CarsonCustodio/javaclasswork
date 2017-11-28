@@ -55,10 +55,26 @@ public class Searching {
 
 
 	private int search(int[] searchThis, int target) {
-		//TODO fill in the method body:
-		delay();
-
+		for(int i = 0; i < searchThis.length; i++) {
+			if(searchThis[i] == target) {
+				return i;
+			}
+			delay();
+		}
 		return -1;
+	}
+	
+	public static int binarySearch(int[] searchThis, int startIndex, int endIndex, int target) {
+		int x = 0;
+		int i = searchThis.length/2;
+		
+		
+		if(searchThis[i] == target) {
+			System.out.println("It took " + x + " tries");
+			return i;
+		}
+		x++;
+		binarySearch(searchThis, startIndex, endIndex, target);
 	}
 	
 	/**
