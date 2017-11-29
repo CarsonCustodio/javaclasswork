@@ -27,7 +27,7 @@ public class Searching {
 	}
 
 	private void proceedWithSearch() {
-		System.out.println("Loaded " + numbers.length+" ints. Enter a value between 0 and "+numbers[numbers.length-1]);
+		/*System.out.println("Loaded " + numbers.length+" ints. Enter a value between 0 and "+numbers[numbers.length-1]);
 		int target = -1;
 		while(target==-1){
 			try{
@@ -41,14 +41,15 @@ public class Searching {
 				+ "It's okay, the computer has been set to take "+HANDICAP+" ms for every iteration in its search algorithm.\n"
 						+ "Open the file called \"ints.txt\". You will find it in the Data folder of this repository.\nTry to find the number "+target+" (by scrolling and reading)."
 				+ "\n    Press 'enter' to begin.");
-		in.nextLine();
-
-		int index = search(numbers, target);
+				in.nextLine();
+	*/	
+		int target = numbers[(int)(Math.random() * numbers.length) -1];
+		int index = bSearch(numbers, 0, numbers.length, target);
 
 		if(index!=-1){
-			System.out.println("The number "+target+" was found at index "+index+". Did the computer win?");
+			System.out.println("The number " + target + " was found at index " + index);
 		}else{
-			System.out.println("The number "+target+" was not found in the file.");
+			System.out.println("The number " + target + " was not found in the file.");
 		}
 		
 	}
@@ -64,17 +65,19 @@ public class Searching {
 		return -1;
 	}
 	
-	public static int binarySearch(int[] searchThis, int startIndex, int endIndex, int target) {
-		int x = 0;
-		int i = searchThis.length/2;
-		
-		
-		if(searchThis[i] == target) {
-			System.out.println("It took " + x + " tries");
-			return i;
+	public static int bSearch(int[] search, int start, int end, int target) {
+		delay();
+		if(start < end) {
+			int mid = start + (end - start) / 2;
+			if(target < search[mid]) {
+				return bSearch(search, start, mid-1, target);
+			}else if(target > search[mid]) {
+				return bSearch(search, mid+1, end, target);
+			}else {
+				return mid;
+			}
 		}
-		x++;
-		binarySearch(searchThis, startIndex, endIndex, target);
+		return -1;
 	}
 	
 	/**
@@ -83,7 +86,7 @@ public class Searching {
 	 * If you are running this on a slow machine, you can decrease the HANDICAP
 	 * field to decrease the length of the delay
 	 */
-	private void delay() {
+	private static void delay() {
 		try {
 			Thread.sleep(HANDICAP);
 		} catch (InterruptedException e) {
